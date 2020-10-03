@@ -1,0 +1,17 @@
+.xt{
+  background-color: #f8f9fa;
+  border: solid 1px #82d2d4;
+  border-radius: 0 20px 20px 0;
+  z-index: 999;
+}
+
+.img1{
+width: 110px; 
+max-width: 100%; 
+border-radius: 55px; 
+border: solid 1px #dedede";
+}
+
+.pad{
+  margin-left: 100px !important;
+}
