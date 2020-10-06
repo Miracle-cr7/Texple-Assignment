@@ -2,7 +2,12 @@
 <?php
 define("REDIRECT1","Location:new.php");
 
-$mysqli = new mysqli('localhost','root','') or die(mysqli_error($mysqli));
+if(isset($_POST['pass'])){
+    $_SESSION['pass'] = $_POST['pass'];
+    header(REDIRECT1);
+}
+
+$mysqli = new mysqli('localhost','root',$_SESSION['pass']) or die(mysqli_error($mysqli));
 $mysqli->query('CREATE DATABASE IF NOT EXISTS work') or die($mysqli->error);
 $mysqli->select_db('work');
 $mysqli->query("CREATE TABLE IF NOT EXISTS todo_List( _id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, ToDo VARCHAR(500) NOT NULL, date DATE NOT NULL)") or die($mysqli->error);
@@ -53,4 +58,5 @@ if (isset($_POST['update'])){
 
     header(REDIRECT1);
 }
+
 ?>
